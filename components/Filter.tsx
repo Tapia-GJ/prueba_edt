@@ -43,14 +43,14 @@ export const Filter = ({ sort, setSort, setSearch }: FilterProps) => {
         <>
             <div className="flex items-center gap-4">
 
-                <DropdownMenu>
+                <DropdownMenu >
                     <DropdownMenuTrigger asChild>
                         <button className="flex items-center gap-2 bg-yellow-500 text-white px-4 py-2 rounded-lg">
                             Sort
                             {sort.desc ? <ArrowDownWideNarrow size={18} /> : <ArrowUpNarrowWide size={18} />}
                         </button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent >
+                    <DropdownMenuContent className="bg-white" >
 
                         <DropdownMenuLabel>Ordenar por</DropdownMenuLabel>
                         <DropdownMenuSeparator />

@@ -32,7 +32,7 @@ export const Restaurants = ({ restaurants }: RestaurantsProps) => {
 
 
     return (
-        <aside className="w-full h-screen bg-white border-r border-gray-200 p-6 overflow-y-auto">
+        <aside className="w-full h-screen bg-white border-r border-gray-200 p-6 ">
             <h1 className="text-4xl font-bold mb-2 text-yellow-500 text-center">Melp</h1>
             <h2 className="text-2xl font-bold mb-6  text-center">
                 Find a restaurant near you
@@ -50,7 +50,7 @@ export const Restaurants = ({ restaurants }: RestaurantsProps) => {
 
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 max-h-[60vh] overflow-y-auto">
                 {filteredRestaurants().map(restaurant => (
                     <RestaurantCard key={restaurant.id} restaurant={restaurant} />
                 ))}
