@@ -26,7 +26,7 @@ export const RestaurantCard = ({ restaurant }: RestaurantCardProps) => {
                     </div>
                 </div>
 
-                <div className="bg-primary text-white font-semibold px-4 py-1 rounded-lg text-sm flex gap-2">
+                <div className="bg-yellow-500 text-white font-semibold px-4 py-1 rounded-lg text-sm flex gap-2">
                     <Star className="w-4 h-4" /> {rating}
                 </div>
             </div>
