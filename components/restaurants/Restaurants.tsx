@@ -8,9 +8,11 @@ import { sortRestaurantsByRating, sortRestaurantsByName } from "@/utils/sort";
 import { Filter } from "@/components/Filter";
 interface RestaurantsProps {
     restaurants: RestaurantsResponse[];
+    meters: number;
+    setMeters: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const Restaurants = ({ restaurants }: RestaurantsProps) => {
+export const Restaurants = ({ restaurants, meters, setMeters }: RestaurantsProps) => {
     const [search, setSearch] = useState("");
     const [sort, setSort] = useState({
         typeSelected: "",
@@ -49,8 +51,14 @@ export const Restaurants = ({ restaurants }: RestaurantsProps) => {
                 </div>
 
             </div>
-
+            <input type="number"
+                placeholder="Search for restaurants..."
+                className="w-full p-2 border-2 border-gray-200 rounded-lg"
+                value={meters}
+                onChange={event => { setMeters(Number(event.target.value)); }}
+            />
             <div className="flex flex-col gap-4 max-h-[60vh] overflow-y-auto">
+
                 {filteredRestaurants().map(restaurant => (
                     <RestaurantCard key={restaurant.id} restaurant={restaurant} />
                 ))}

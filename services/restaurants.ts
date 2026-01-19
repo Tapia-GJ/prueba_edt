@@ -8,7 +8,7 @@ export async function getAllRestaurants(): Promise<RestaurantsResponse[]> {
   return data;
 }
 
-export async function getRestaurantsById(
+export async function getRestaurantById(
   id: string,
 ): Promise<RestaurantsResponse | null> {
   const data = await getAllRestaurants();

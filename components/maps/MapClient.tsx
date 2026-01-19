@@ -5,7 +5,12 @@ import dynamic from "next/dynamic";
 const Map = dynamic(() => import("./MapView"), { ssr: false });
 interface RestaurantsProps {
     restaurants: RestaurantsResponse[];
+    meters: number;
 }
-export default function MapClient({ restaurants }: RestaurantsProps) {
-    return <Map restaurants={restaurants} />;
+export default function MapClient({ restaurants, meters }: RestaurantsProps) {
+    return (
+        <>
+            <Map restaurants={restaurants} meters={meters} />
+        </>
+    );
 }
