@@ -26,14 +26,12 @@ export const Filter = ({ sort, setSort, setSearch }: FilterProps) => {
         });
     };
     const ratingSortHandler = () => {
-        eliminarFiltros();
         setSort({
             typeSelected: "Rating",
             desc: !sort.desc,
         });
     };
     const nameSortHandler = () => {
-        eliminarFiltros();
         setSort({
             typeSelected: "Name",
             desc: !sort.desc,
@@ -41,7 +39,7 @@ export const Filter = ({ sort, setSort, setSearch }: FilterProps) => {
     };
     return (
         <>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4 relative">
 
                 <DropdownMenu >
                     <DropdownMenuTrigger asChild>
@@ -50,7 +48,17 @@ export const Filter = ({ sort, setSort, setSearch }: FilterProps) => {
                             {sort.desc ? <ArrowDownWideNarrow size={18} /> : <ArrowUpNarrowWide size={18} />}
                         </button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="bg-white" >
+                    <DropdownMenuContent
+                        align="start"
+                        side="bottom"
+                        className="
+    bg-white
+    w-48
+    max-w-[90vw]
+    overflow-hidden
+  "
+                    >
+
 
                         <DropdownMenuLabel>Ordenar por</DropdownMenuLabel>
                         <DropdownMenuSeparator />

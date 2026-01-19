@@ -34,21 +34,21 @@ export const Restaurants = ({ restaurants, meters, setMeters }: RestaurantsProps
 
 
     return (
-        <aside className="w-full h-screen bg-white border-r border-gray-200 p-6 ">
+        <div className="w-full h-screen bg-white border-r border-gray-200 p-6 ">
             <h1 className="text-4xl font-bold mb-2 text-yellow-500 text-center">Melp</h1>
             <h2 className="text-2xl font-bold mb-6  text-center">
                 Find a restaurant near you
             </h2>
             <div className="flex gap-4 mb-2">
+                <div className="flex gap-4">
+                    <Filter sort={sort} setSort={setSort} setSearch={setSearch} />
+                </div>
                 <input type="text"
                     placeholder="Search for restaurants..."
                     className="w-full p-2 border-2 border-gray-200 rounded-lg"
                     value={search}
                     onChange={event => { setSearch(event.target.value); }}
                 />
-                <div className="flex gap-4">
-                    <Filter sort={sort} setSort={setSort} setSearch={setSearch} />
-                </div>
 
             </div>
             <input type="number"
@@ -63,6 +63,6 @@ export const Restaurants = ({ restaurants, meters, setMeters }: RestaurantsProps
                     <RestaurantCard key={restaurant.id} restaurant={restaurant} />
                 ))}
             </div>
-        </aside>
+        </div>
     );
 };
