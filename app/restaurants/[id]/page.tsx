@@ -1,5 +1,5 @@
 import { getAllRestaurants } from "@/services/restaurants";
-import RestaurantDetailClient from "@/components/restaurants/RestaurantDetailClient";
+import RestaurantDetails from "@/components/restaurants/RestaurantDetails";
 import { RestaurantsResponse } from "@/app/restaurants/interfaces/restaurants-response";
 
 export async function generateStaticParams() {
@@ -18,5 +18,5 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
         return <div className="p-10 text-center">Restaurant not found</div>;
     }
 
-    return <RestaurantDetailClient restaurant={restaurant} />;
+    return <RestaurantDetails restaurant={restaurant} />;
 }

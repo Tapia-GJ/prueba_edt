@@ -45,18 +45,18 @@ export default function MapView({ restaurants, meters }: RestaurantsProps) {
         [restaurants, positionMarker, radius],
     );
     const ratings = restaurantsInRadius.map(r => r.rating);
-    const avg = ratings.length ? average(ratings).toFixed(2) : "N/A";
-    const std = ratings.length ? standardDeviation(ratings).toFixed(2) : "N/A";
+    const averageRating = ratings.length ? average(ratings).toFixed(2) : "N/A";
+    const deviation = ratings.length ? standardDeviation(ratings).toFixed(2) : "N/A";
     return (
         <div className="flex flex-col w-full h-screen max-w-screen">
-            <div className="bg-white p-4 rounded-xl shadow-lg text-sm overflow-y-auto m-4">
+            <div className="bg-white p-4text-sm m-4">
 
                 <h3 className="text-lg mb-2">{radius}m</h3>
 
                 <p>Restaurants: {restaurantsInRadius.length}</p>
-                <p>Avg Rating: {avg}</p>
-                <p>Std Dev: {std}</p>
-                <div className="mt-2 max-h-20">
+                <p>Average Rating: {averageRating}</p>
+                <p>Standard Deviation: {deviation}</p>
+                <div className="mt-2">
                     <p>{restaurantsInRadius.map(r => r.name).join(", ")}</p>
                 </div>
             </div>

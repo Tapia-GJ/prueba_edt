@@ -8,7 +8,7 @@ import ShareButton from '../ui/shared-button';
 interface Props {
     restaurant: RestaurantsResponse;
 }
-export default function RestaurantDetailClient({ restaurant }: Props) {
+export default function RestaurantDetails({ restaurant }: Props) {
     const { name, rating, contact, address } = restaurant;
     const router = useRouter();
 
@@ -24,7 +24,7 @@ export default function RestaurantDetailClient({ restaurant }: Props) {
                     </div>
                 </div>
 
-                <div className='grid grid-cols-12 p-6 bg-white border border-gray-200 rounded-2xl shadow-sm max-w-[70%] mx-auto'>
+                <div className='grid grid-cols-12 p-6 bg-white border border-gray-200 rounded-2xl shadow-sm max-w-full md:max-w-[70%] mx-auto'>
                     <div className='col-span-12 md:col-span-6 p-4 '>
                         <div className='flex gap-y-4 flex-col'>
                             <div className='flex flex-col gap-y-2 '>
@@ -41,11 +41,11 @@ export default function RestaurantDetailClient({ restaurant }: Props) {
                         <div className='flex gap-y-4 flex-col'>
                             <div className='flex flex-col gap-y-2 '>
                                 <p className='flex text-yellow-700 gap-2'><MapPin size={20} />  Email</p>
-                                <p>{contact.email}</p>
+                                <p className='break-all'>{contact.email}</p>
                             </div>
                             <div className='flex flex-col gap-y-2 '>
                                 <p className='flex text-yellow-700 gap-2'><Phone size={20} />  WebSite</p>
-                                <Link href={contact.site}><p className='text-yellow-600 underline'>{contact.site}</p></Link>
+                                <Link href={contact.site}><p className='text-yellow-600 underline break-all'>{contact.site}</p></Link>
                             </div>
                         </div>
                     </div>

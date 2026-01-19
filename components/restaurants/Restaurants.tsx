@@ -53,7 +53,7 @@ export const Restaurants = ({ restaurants, meters, setMeters }: RestaurantsProps
             </div>
             <input type="number"
                 placeholder="Search for restaurants..."
-                className="w-full p-2 border-2 border-gray-200 rounded-lg"
+                className="w-full p-2 border-2 border-gray-200 rounded-lg mb-2"
                 value={meters}
                 onChange={event => { setMeters(Number(event.target.value)); }}
             />
